@@ -14,23 +14,6 @@ Fork this repo, and edit `/streamlit_app.py` to customize this app to your heart
 cols = st.columns(3)
 st.markdown("###")
 place_progress = st.empty()
-
-if 'step' not in st.session_state:
-    st.session_state.step = 0
-    st.session_state.mail = ""
-    st.session_state.password = ""
-
-    st.session_state.dic_player = {}
-    st.session_state.player = ""
-    st.session_state.id_player = ""
-
-    st.session_state.dates = []
-    st.session_state.date = ""
-
-    st.session_state.file_name = "temp.csv"
-    st.session_state.df = pd.DataFrame()
-    
-    st.session_state.driver = None
     
 with st.echo():
     from selenium import webdriver
