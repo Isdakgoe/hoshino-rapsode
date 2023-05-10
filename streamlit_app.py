@@ -45,7 +45,7 @@ with st.echo():
     options.add_argument('--disable-gpu')
     options.add_argument('--headless')
 
-    driver = get_driver()
+    st.session_state.driver = get_driver()
     url = "https://cloud.rapsodo.com/team"
     st.session_state.driver.get(url)
     wait.until(EC.presence_of_all_elements_located)
