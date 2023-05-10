@@ -29,6 +29,8 @@ if 'step' not in st.session_state:
     st.session_state.file_name = "temp.csv"
     st.session_state.df = pd.DataFrame()
     
+    st.session_state.driver = None
+    
 with st.echo():
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
