@@ -1,4 +1,5 @@
 import streamlit as st
+from selenium.webdriver.support.ui import WebDriverWait
 
 """
 ## Web scraping on Streamlit Cloud with Selenium
