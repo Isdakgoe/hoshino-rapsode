@@ -13,6 +13,7 @@ Fork this repo, and edit `/streamlit_app.py` to customize this app to your heart
 cols = st.columns(3)
 st.markdown("###")
 place_progress = st.empty()
+wait = WebDriverWait(driver=driver, timeout=30)
 
 if 'step' not in st.session_state:
     st.session_state.step = 0
