@@ -26,7 +26,6 @@ if 'step' not in st.session_state:
     st.session_state.dates = []
     st.session_state.date = ""
 
-    st.session_state.driver, st.session_state.wait = init_setting()
     st.session_state.file_name = "temp.csv"
     st.session_state.df = pd.DataFrame()
     
@@ -46,7 +45,7 @@ with st.echo():
 
     driver = get_driver()
     url = "https://cloud.rapsodo.com/team"
-    driver.get(url)
+    st.session_state.driver.get(url)
     wait.until(EC.presence_of_all_elements_located)
 
     
