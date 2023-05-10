@@ -14,7 +14,6 @@ Fork this repo, and edit `/streamlit_app.py` to customize this app to your heart
 cols = st.columns(3)
 st.markdown("###")
 place_progress = st.empty()
-wait = WebDriverWait(driver=driver, timeout=30)
 
 if 'step' not in st.session_state:
     st.session_state.step = 0
@@ -48,6 +47,8 @@ with st.echo():
     options.add_argument('--headless')
 
     st.session_state.driver = get_driver()
+    wait = WebDriverWait(driver=st.session_state.driver, timeout=30)
+    
     url = "https://cloud.rapsodo.com/team"
     st.session_state.driver.get(url)
     wait.until(EC.presence_of_all_elements_located)
