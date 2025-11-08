@@ -43,7 +43,7 @@ def get_dates(driver, page_player):
     return dates
 
 
-@st.experimental_singleton
+@st.cache_resource
 def get_driver():
     options = Options()
     options.add_argument('--disable-gpu')
